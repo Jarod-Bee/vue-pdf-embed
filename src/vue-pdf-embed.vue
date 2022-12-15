@@ -128,6 +128,7 @@ export default {
       () => [
         this.source,
         this.disableAnnotationLayer,
+        this.transparentBackground,
         this.disableTextLayer,
         this.height,
         this.page,

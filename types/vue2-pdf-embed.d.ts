@@ -2,6 +2,7 @@ import { VueConstructor } from 'vue';
 
 export interface VuePdfEmbedProps {
   disableAnnotationLayer?: boolean;
+  transparentBackground?: boolean;
   disableTextLayer?: boolean;
   height?: number | string;
   imageResourcesPath?: string;

@@ -72,17 +72,18 @@ export default {
 
 ### Props
 
-| Name                   | Type                                     | Accepted values                                  | Description                                                                |
-| ---------------------- | ---------------------------------------- | ------------------------------------------------ | -------------------------------------------------------------------------- |
-| disableAnnotationLayer | `boolean`                                | `true` or `false`                                | whether the annotation layer should be disabled                            |
-| disableTextLayer       | `boolean`                                | `true` or `false`                                | whether the text layer should be disabled                                  |
-| height                 | `number` <br> `string`                   | natural numbers                                  | desired page height in pixels (ignored if the width property is specified) |
-| imageResourcesPath     | `string`                                 | URL or path with trailing slash                  | path for icons used in the annotation layer                                |
-| page                   | `number`                                 | `1` to the last page number                      | number of the page to display (displays all pages if not specified)        |
-| rotation               | `number` <br> `string`                   | `0`, `90`, `180` or `270` (multiples of `90`)    | desired page rotation angle in degrees                                     |
-| scale                  | `number`                                 | rational numbers                                 | desired ratio of canvas size to document size                              |
-| source                 | `string` <br> `object` <br> `Uint8Array` | document URL or typed array pre-filled with data | source of the document to display                                          |
-| width                  | `number` <br> `string`                   | natural numbers                                  | desired page width in pixels                                               |
+| Name                   | Type                                     | Accepted values                                  | Description                                                                                  |
+| ---------------------- | ---------------------------------------- | ------------------------------------------------ |----------------------------------------------------------------------------------------------|
+| disableAnnotationLayer | `boolean`                                | `true` or `false`                                | whether the annotation layer should be disabled                                              |
+| transparentBackground | `boolean`                                | `true` or `false`                                | whether the pdf has a transparent background or not. Can improve performance if set to false |
+| disableTextLayer       | `boolean`                                | `true` or `false`                                | whether the text layer should be disabled                                                    |
+| height                 | `number` <br> `string`                   | natural numbers                                  | desired page height in pixels (ignored if the width property is specified)                   |
+| imageResourcesPath     | `string`                                 | URL or path with trailing slash                  | path for icons used in the annotation layer                                                  |
+| page                   | `number`                                 | `1` to the last page number                      | number of the page to display (displays all pages if not specified)                          |
+| rotation               | `number` <br> `string`                   | `0`, `90`, `180` or `270` (multiples of `90`)    | desired page rotation angle in degrees                                                       |
+| scale                  | `number`                                 | rational numbers                                 | desired ratio of canvas size to document size                                                |
+| source                 | `string` <br> `object` <br> `Uint8Array` | document URL or typed array pre-filled with data | source of the document to display                                                            |
+| width                  | `number` <br> `string`                   | natural numbers                                  | desired page width in pixels                                                                 |
 
 ### Events
 
