@@ -46,6 +46,13 @@ export default {
      */
     height: [Number, String],
     /**
+     * A boolean value that indicates if the canvas contains an alpha channel.
+     * If set to false, the browser now knows that the backdrop is always opaque,
+     * which can speed up drawing of transparent content and images.
+     * May fix bugs linked to white spot on pdfs : https://github.com/mozilla/pdf.js/issues/15304
+     */
+    transparentBackground: Boolean,
+    /**
      * Component identifier (inherited by page containers with page number
      * postfixes).
      * @values String
@@ -249,13 +256,17 @@ export default {
             iframe.contentWindow.document.body.appendChild(canvasClone)
 
             await page.render({
-              canvasContext: canvas.getContext('2d'),
+              canvasContext: canvas.getContext('2d', {
+                alpha: this.transparentBackground,
+              }),
               intent: 'print',
               transform: [printUnits, 0, 0, printUnits, 0, 0],
               viewport,
             }).promise
 
-            canvasClone.getContext('2d').drawImage(canvas, 0, 0)
+            canvasClone
+              .getContext('2d', { alpha: this.transparentBackground })
+              .drawImage(canvas, 0, 0)
           })
         )
 
@@ -348,7 +359,9 @@ export default {
       canvas.height = viewport.height
 
       await page.render({
-        canvasContext: canvas.getContext('2d'),
+        canvasContext: canvas.getContext('2d', {
+          alpha: this.transparentBackground,
+        }),
         viewport,
       }).promise
     },
