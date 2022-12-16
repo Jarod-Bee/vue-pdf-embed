@@ -16,7 +16,7 @@
   ],
   "license": "MIT",
   "author": "Aliaksei Hrynko (https://github.com/hrynko)",
-  "repository": "github:hrynko/vue-pdf-embed",
+  "repository": "https://github.com/Jarod-Bee/vue-pdf-embed",
   "scripts": {
     "prepare": "webpack build",
     "build": "webpack build --progress",
@@ -59,8 +59,5 @@
   },
   "peerDependencies": {
     "vue": "^2.x || ^3.x"
-  },
-  "publishConfig": {
-    "registry": "https://github.com/Jarod-Bee/vue-pdf-embed.git"
   }
 }
