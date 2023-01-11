@@ -317,7 +317,6 @@ export default {
               canvas.style.height = `${Math.floor(actualWidth)}px`
             } else {
               canvas.style.width = `${Math.floor(actualWidth)}px`
-              canvas.style.height = `${Math.floor(actualHeight)}px`
             }
 
             await this.renderPage(page, canvas, actualWidth)
